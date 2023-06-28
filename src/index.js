@@ -4,24 +4,22 @@ import './styles.css';
 
 function Avatar() {
   return (
-    <div>
-      <img
-        src="pinkclouds.jpg"
-        alt="pink clouds in the sky"
-        className="image"
-      />
-    </div>
+    <img
+      src='pinkclouds.jpg'
+      alt='pink clouds in the sky'
+      className='avatar image'
+    />
   );
 }
 
 function Intro() {
   return (
     <div>
-      <h1>kyem asa</h1>
+      <h1>Kyem Asa</h1>
       <p>
-        Full-stack web developer and Genshin Impact player based in Texas. When
-        not coding, I'm playing video games or reading manwha. Feel to reach out
-        to me to get in touch!
+        Hi! I'm a full-stack web developer based in Texas 🤠. When not coding,
+        I'm playing Genshin Impact or reading manwha. Feel to reach out to me if
+        you'd like to collaborate!
       </p>
     </div>
   );
@@ -29,19 +27,28 @@ function Intro() {
 
 function SkillList() {
   return (
-    <div className="skillList">
-      <p className="skill">HTML & CSS</p>
-      <p>UX/UI design</p>
-      <p></p>
+    <div className='skill-list'>
+      <Skill name='Frontend Development' emoji='👍' color='#F8C8DC' />
+      <Skill name='UX/UI Design' emoji='🎉' color='#F89880' />
+      <Skill name='Backend Development' emoji='🌟' color='#F33A6A' />
+      <Skill name='Technical Writing' emoji='🌻' color='#FAA0A0' />
     </div>
   );
 }
 
+function Skill(props) {
+  return (
+    <div className='skill' style={{ backgroundColor: props.color }}>
+      <span>{props.name}</span>
+      <span>{props.emoji}</span>{' '}
+    </div>
+  );
+}
 function App() {
   return (
-    <div className="card">
+    <div className='card'>
       <Avatar />
-      <div className="data">
+      <div className='data'>
         <Intro />
         <SkillList />
       </div>
