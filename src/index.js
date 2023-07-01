@@ -18,7 +18,7 @@ function Intro() {
       <h1>Hi, I'm Grey</h1>
       <p>
         I'm a full-stack web developer based in Texas. 🤠 When not coding, I
-        like to play gacha games, hang out with my cats, and read manwha. Thanks
+        like to play gacha games, hang out with my cats, and read manhwa. Thanks
         for reading!
       </p>
     </div>
