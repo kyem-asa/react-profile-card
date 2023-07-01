@@ -5,9 +5,9 @@ import './styles.css';
 function Avatar() {
   return (
     <img
-      src='pinkclouds.jpg'
-      alt='pink clouds in the sky'
-      className='avatar image'
+      src="pinkclouds.jpg"
+      alt="pink clouds in the sky"
+      className="avatar image"
     />
   );
 }
@@ -15,11 +15,11 @@ function Avatar() {
 function Intro() {
   return (
     <div>
-      <h1>Kyem Asa</h1>
+      <h1>Hi, I'm Grey</h1>
       <p>
-        Hi! I'm a full-stack web developer based in Texas 🤠. When not coding,
-        I'm playing Genshin Impact or reading manwha. Feel to reach out to me if
-        you'd like to collaborate!
+        I'm a full-stack web developer based in Texas. 🤠 When not coding, I
+        like to play gacha games, hang out with my cats, and read manwha. Thanks
+        for reading!
       </p>
     </div>
   );
@@ -27,18 +27,18 @@ function Intro() {
 
 function SkillList() {
   return (
-    <div className='skill-list'>
-      <Skill name='Frontend Development' emoji='👍' color='#F8C8DC' />
-      <Skill name='UX/UI Design' emoji='🎉' color='#F89880' />
-      <Skill name='Backend Development' emoji='🌟' color='#F33A6A' />
-      <Skill name='Technical Writing' emoji='🌻' color='#FAA0A0' />
+    <div className="skill-list">
+      <Skill name="HTML & CSS" emoji="👍" color="#F8C8DC" />
+      <Skill name="MongoDB" emoji="🎉" color="#F89880" />
+      <Skill name="NodeJS" emoji="🌟" color="#F33A6A" />
+      <Skill name="TailwindCSS" emoji="🌻" color="#FAA0A0" />
     </div>
   );
 }
 
 function Skill(props) {
   return (
-    <div className='skill' style={{ backgroundColor: props.color }}>
+    <div className="skill" style={{ backgroundColor: props.color }}>
       <span>{props.name}</span>
       <span>{props.emoji}</span>{' '}
     </div>
@@ -46,9 +46,9 @@ function Skill(props) {
 }
 function App() {
   return (
-    <div className='card'>
+    <div className="card">
       <Avatar />
-      <div className='data'>
+      <div className="data">
         <Intro />
         <SkillList />
       </div>
