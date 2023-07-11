@@ -1,7 +1,29 @@
-import { StrictMode } from 'react';
+import { StrictMode, useLayoutEffect } from 'react';
 import { createRoot } from 'react-dom/client';
 import './styles.css';
 
+const skillsData = [
+  {
+    name: 'HTML & CSS',
+    color: '#F8C8DC',
+    level: 'advanced',
+  },
+  {
+    name: 'React',
+    color: '#F89880',
+    level: 'basic',
+  },
+  {
+    name: 'MongoDB',
+    color: '#F33A6A',
+    level: 'intermediate',
+  },
+  {
+    name: 'NodeJS',
+    color: '#FAA0A0',
+    level: 'intermediate',
+  },
+];
 function Avatar() {
   return (
     <img
@@ -26,24 +48,31 @@ function Intro() {
 }
 
 function SkillList() {
+  let skills = skillsData;
+  const numSkills = skills.length;
+
   return (
-    <div className="skill-list">
-      <Skill name="HTML & CSS" emoji="👍" color="#F8C8DC" />
-      <Skill name="MongoDB" emoji="🎉" color="#F89880" />
-      <Skill name="NodeJS" emoji="🌟" color="#F33A6A" />
-      <Skill name="TailwindCSS" emoji="🌻" color="#FAA0A0" />
+    <ul className="skill-list">
+      {skillsData.map((skills) => (
+        <Skill skillObject={skills} key={skills.name} />
+      ))}
+    </ul>
+  );
+}
+
+function Skill({ skillObject }) {
+  return (
+    <div className="skill" style={{ backgroundColor: skillObject.color }}>
+      <span>{skillObject.name}</span>
+      <span>
+        {skillObject.level === 'basic' && '🐤'}
+        {skillObject.level === 'intermediate' && '🌟'}
+        {skillObject.level === 'advanced' && '💪'}
+      </span>
     </div>
   );
 }
 
-function Skill(props) {
-  return (
-    <div className="skill" style={{ backgroundColor: props.color }}>
-      <span>{props.name}</span>
-      <span>{props.emoji}</span>{' '}
-    </div>
-  );
-}
 function App() {
   return (
     <div className="card">
